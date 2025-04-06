@@ -23,6 +23,18 @@
   </style>
 </head>
 <body>
+fetch("https://api.alternative.me/fng/")
+  .then(res => res.json())
+  .then(data => {
+    const value = data.data[0].value;
+    const label = data.data[0].value_classification;
+    document.getElementById("fng-container").innerText =
+      `Fear & Greed Index: ${value} (${label})`;
+  })
+  .catch(() => {
+    document.getElementById("fng-container").innerText = "Error loading index.";
+  });
+  
   <div id="fng-container" class="loading">Loading Fear & Greed Index...</div>
 
   <script>
