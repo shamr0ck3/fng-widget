@@ -35,7 +35,8 @@
         document.getElementById("fng-container").innerText =
           `Fear & Greed Index: ${value} (${label})`;
       })
-      .catch(() => {
+      .catch(error => {
+        console.error('Error fetching Fear & Greed Index:', error);
         document.getElementById("fng-container").innerText = "Error loading index.";
       });
 
@@ -53,7 +54,8 @@
           container.innerHTML = "Unable to fetch index value.";
         }
       })
-      .catch(() => {
+      .catch(error => {
+        console.error('Error fetching CNN Fear & Greed Index:', error);
         document.getElementById("fng-container").innerText = "Error loading index.";
       });
   </script>
